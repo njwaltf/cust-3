@@ -11,8 +11,9 @@ class ProfileController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public $title = 'LP | My Profile';
+    public $title = 'Perpus | My Profile';
 
+    // menmpilkan halaman utama
     public function index()
     {
         // show profile
@@ -48,6 +49,7 @@ class ProfileController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
+    // menampilkan form edit data
     public function edit()
     {
         return view('dashboard.profile.edit', [
@@ -58,6 +60,7 @@ class ProfileController extends Controller
     /**
      * Update the specified resource in storage.
      */
+    // mengupdate data ke db
     public function update(Request $request)
     {
         // update profile

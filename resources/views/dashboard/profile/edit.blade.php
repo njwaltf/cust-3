@@ -8,6 +8,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
+
             <div class="card-body">
                 <form action="{{ route('user-profile-update') }}" method="post" enctype="multipart/form-data">
                     <div class="row">
@@ -17,6 +18,7 @@
                             @else {{ asset('assets/images/profile/no-pp.png') }} @endif"
                                 width="250" height="250" class="rounded-circle" id="preview-selected-image">
                         </div>
+
                         <div class="col-lg-4">
                             <div class="mb-4">
                                 <label for="name" class="form-label">Nama Lengkap</label>
@@ -41,9 +43,10 @@
                                 @enderror
                             </div>
                             {{-- btn-submit --}}
-                            <button type="submit" class="btn btn-primary m-1">Save Profile</button>
+                            <button type="submit" class="btn btn-custom m-1">Save Profile</button>
                             <a href="/dashboard/profile" class="btn btn-outline-danger m-1">Cancel</a>
                         </div>
+
                         <div class="col-lg-4">
                             <div class="mb-4">
                                 <label for="username" class="form-label">Username</label>
@@ -56,11 +59,13 @@
                                     <p style="color: red;">{{ $message }}</p>
                                 @enderror
                             </div>
+
                             <div class="mb-4">
                                 <label for="prof_pic" class="form-label">Upload Profile</label>
                                 <input type="file" class="form-control" id="prof_pic" name="prof_pic"
                                     value="{{ auth()->user()->prof_pic }}" onchange="previewImage(event);">
                             </div>
+                            
                             <input type="hidden" name="id" value="{{ auth()->user()->id }}">
                         </div>
                     </div>

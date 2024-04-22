@@ -2,9 +2,13 @@
 @section('main')
     <!-- Content -->
     <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><a href="/dashboard/">Dashboard</a> /</span>
+        <h4 class="fw-bold py-3 mb-4 title2">
+            <span class="text-muted fw-light">
+                <a href="/dashboard/" class="title1">Dashboard</a> /
+            </span>
             Book Category
         </h4>
+
         @if (session()->has('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {!! session('success') !!}
@@ -26,13 +30,14 @@
             </div>
         @endif
 
-        @if (auth()->user()->role === 'member')
+        @if (auth()->user()->role === 'member' || auth()->user()->role === 'librarian')
             <!-- Error -->
-            <div class="container-xxl container-p-y">
+            <div class="container-xxl container-p-y text-center m-5">
                 <div class="misc-wrapper">
                     <h2 class="mb-2 mx-2">Page Not Found :(</h2>
                     <p class="mb-4 mx-2">Oops! 😖 The requested URL was not found on this server.</p>
-                    <a href="/dashboard" class="btn btn-primary">Back to home</a>
+                    <a href="/dashboard" class="btn btn-custom">Back to home</a>
+                    
                     <div class="mt-3">
                         <img src="{{ asset('assets/img/illustrations/page-misc-error-light.png') }}"
                             alt="page-misc-error-light" width="500" class="img-fluid"
@@ -43,14 +48,17 @@
             </div>
             <!-- /Error -->
         @else
+
             <div class="row my-3">
                 <div class="col-2">
-                    <h2>Category List</h2>
+                    <h2 class="sub-header1">Category List</h2>
                 </div>
+
                 <div class="col-2">
-                    <a href="/dashboard/types/create" class="btn btn-primary">Add new Category</a>
+                    <a href="/dashboard/types/create" class="btn btn-custom">Add new Category</a>
                 </div>
             </div>
+
             <div class="table-responsive">
                 <table class="table text-nowrap mb-0 align-middle table-hover display" id="myTable">
                     <thead class="text-dark fs-4">
@@ -69,6 +77,7 @@
                             </th>
                         </tr>
                     </thead>
+                    
                     <tbody>
                         @forelse ($categories as $category)
                             <tr>

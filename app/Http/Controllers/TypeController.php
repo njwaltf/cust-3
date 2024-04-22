@@ -11,7 +11,8 @@ class TypeController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public $title = 'LP | Book Categories';
+    public $title = 'Perpus | Book Categories';
+    // menmpilkan halaman utama
     public function index()
     {
         return view('dashboard.types.index', [
@@ -23,6 +24,7 @@ class TypeController extends Controller
     /**
      * Show the form for creating a new resource.
      */
+    // menampilkan halaman tambah data
     public function create()
     {
         return view('dashboard.types.create', [
@@ -33,6 +35,7 @@ class TypeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    // menambahkan data ke db
     public function store(StoreTypeRequest $request)
     {
         $validatedData = $request->validate([
@@ -47,6 +50,7 @@ class TypeController extends Controller
     /**
      * Display the specified resource.
      */
+    // menampilkan detail perdata
     public function show(Type $type)
     {
         return view('dashboard.types.show', [
@@ -58,6 +62,7 @@ class TypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
+    // menampilkan form edit data
     public function edit(Type $type)
     {
         return view('dashboard.types.edit', [
@@ -69,6 +74,7 @@ class TypeController extends Controller
     /**
      * Update the specified resource in storage.
      */
+    // mengupdate data ke db
     public function update(UpdateTypeRequest $request, Type $type)
     {
         $validatedData = $request->validate([
@@ -83,6 +89,7 @@ class TypeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+    // menghapus data
     public function destroy(Type $type)
     {
         Type::destroy($type->id);

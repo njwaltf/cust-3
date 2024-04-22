@@ -15,7 +15,8 @@ class BookingController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public $title = 'LP | Bookings';
+    public $title = 'Perpus | Bookings';
+    // menampilkan halaman utama
     public function index()
     {
         return view('dashboard.bookings.index', [
@@ -37,6 +38,7 @@ class BookingController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    // menyimpan data peminjaman ke db
     public function store(StoreBookingRequest $request)
     {
         $validatedData = $request->validate([
@@ -61,6 +63,7 @@ class BookingController extends Controller
     /**
      * Display the specified resource.
      */
+    // menampilkan detail data
     public function show(Booking $booking)
     {
         return view('dashboard.bookings.show', [
@@ -72,17 +75,20 @@ class BookingController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
+    // menampilkan form edit data
     public function edit(Booking $booking)
     {
         return view('dashboard.bookings.edit', [
             'title' => $this->title,
-            'booking' => $booking
+            'booking' => $booking,
+            // 'all_bookings' => Booking::all()
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
+    // mengupdate status peminjaman
     public function update(UpdateBookingRequest $request, Booking $booking)
     {
         // edit booking
@@ -138,7 +144,8 @@ class BookingController extends Controller
     {
         //
     }
-    public function exportPDF(Request $request)
+    // export data ke pdf
+    public function exportPDF()
     {
         $booking = Booking::all();
         $data['bookings'] = $booking;

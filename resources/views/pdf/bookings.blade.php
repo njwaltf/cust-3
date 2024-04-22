@@ -9,6 +9,7 @@
     {{-- <link rel="stylesheet" href="{{ asset('css/styles.min.css') }}" /> --}}
     <title>bookings PDF</title>
 </head>
+
 <style>
     #customers {
         border-collapse: collapse;

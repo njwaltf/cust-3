@@ -11,31 +11,32 @@ use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
-    public $title = 'Daftar | LP';
-    public function index()
-    {
-        return view('register', [
-            'title' => $this->title
-        ]);
-    }
+    // public $title = 'Registration | Perpus';
+    // public function index()
+    // {
+    //     return view('register', [
+    //         'title' => $this->title
+    //     ]);
+    // }
 
-    public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'email' => ['required', 'email', 'max:100', 'unique:users'],
-            'username' => ['required', 'unique:users', 'max:20', 'min:4'],
-            'name' => ['required', 'max:100'],
-            'password' => ['required', 'min:8'],
-            'role' => ['required'],
-            'prof_pic' => ['required']
-        ]);
-        // password hash
-        $validatedData['password'] = Hash::make($validatedData['password']);
-        User::create($validatedData);
+    // public function store(Request $request)
+    // {
+    //     $validatedData = $request->validate([
+    //         'email' => ['required', 'email', 'max:100', 'unique:users'],
+    //         'username' => ['required', 'unique:users', 'max:20', 'min:4'],
+    //         'name' => ['required', 'max:100'],
+    //         'password' => ['required', 'min:8'],
+    //         'role' => ['required'],
+    //         'prof_pic' => ['required']
+    //     ]);
+    //     // password hash
+    //     $validatedData['password'] = Hash::make($validatedData['password']);
+    //     User::create($validatedData);
 
-        // succes
-        return redirect('/')->with('success', '<strong>Successfully create accountt!</strong> <br>Please Sign In');
-    }
+    //     // succes
+    //     return redirect('/')->with('success', '<strong>Successfully create accountt!</strong> <br>Please Sign In');
+    // }
+    // fungsi logout
     public function logout(Request $request)
     {
         Auth::logout();

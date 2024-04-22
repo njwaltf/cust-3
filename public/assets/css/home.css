@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+.custom-margin{
+    margin: 100px 0;
+}
+
+h2{
+    font-family: 'Merriweather', serif;
+    font-size: 45px;
+    font-weight: 900;
+}
+
+h5{
+    font-family: 'Kanit';
+    font-weight: 600;
+    font-size: 18px;
+    color: #8B7E74;
+    
+}
+
+p{
+    font-family: 'Nunito';
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.darkbutton{
+    width: 180px;
+    margin-bottom: 15px;
+    font-family: 'Kanit';
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50px;
+    border-color: #000;
+}
+
+.darkbutton:hover, .darkbutton:active{
+    background-color: #606470;
+    color: #fff;
+    border-color: #606470;
+}
+
+.btn-register{
+    width: 180px;
+    font-family: 'Kanit';
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #fff;
+    color: #8B7E74;
+    border-radius: 50px;
+    border-color: #fff;
+}
+
+.btn-register:hover, .btn-register:active{
+    color: #fff;
+    background-color: #000;
+}
+
+.register{
+    background-color: #8B7E74;
+    padding: 100px 25px 50px 25px;
+    margin-top: -100px;
+}
+
+.card-title{
+    font-family: 'Merriweather', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #8B7E74;
+}
+
+.card-custom{
+    height: 240px;
+    border-radius: 0;
+}
+
+.carousel .carousel-item {
+    height: 520px;
+}
+  
+.carousel-item img {
+      position: absolute;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      min-height: 520px;
+}
+
+.navbar-brand{
+    font-family: 'Merriweather';
+    font-size: 20px;
+    font-weight: 800;
+    color: #8B7E74;
+}
+
+.nav-link{
+    font-family: 'Kanit';
+    font-size: 16px;
+    font-weight: 600;
+    color: #8B7E74;
+}
+
+.nav-custom{
+    padding: 3px;
+    background-color: #8B7E74;
+    font-family: 'Kanit';
+    font-size: 16px;
+    border-color: #8B7E74;
+}
+
+.nav-custom:active, .nav-custom:hover{
+    background-color: #000;
+}

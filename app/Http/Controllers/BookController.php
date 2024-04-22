@@ -18,7 +18,8 @@ class BookController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public $title = 'LP | Books';
+    public $title = 'Perpus | Books';
+    // menampilkan halaman utama
     public function index()
     {
         return view('dashboard.books.index', [
@@ -30,6 +31,7 @@ class BookController extends Controller
     /**
      * Show the form for creating a new resource.
      */
+    // menampilkan form tambah data
     public function create()
     {
         return view('dashboard.books.create', [
@@ -41,6 +43,7 @@ class BookController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    // menyimpan data ke db
     public function store(StoreBookRequest $request)
     {
         $validatedData = $request->validate([
@@ -65,6 +68,7 @@ class BookController extends Controller
     /**
      * Display the specified resource.
      */
+    // menampilkan detail data
     public function show(Book $book)
     {
         return view('dashboard.books.show', [
@@ -76,6 +80,7 @@ class BookController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
+    // menampilkann form edit data
     public function edit(Book $book)
     {
         return view('dashboard.books.edit', [
@@ -88,6 +93,7 @@ class BookController extends Controller
     /**
      * Update the specified resource in storage.
      */
+    // mengupdate data ke db
     public function update(UpdateBookRequest $request, Book $book)
     {
         $validatedData = $request->validate([
@@ -111,13 +117,15 @@ class BookController extends Controller
     /**
      * Remove the specified resource from storage.
      */
+    // menghapus data buku
     public function destroy(Book $book)
     {
         Book::destroy($book->id);
         return redirect('/dashboard/books')->with('successDelete', 'Book has been deleted!');
     }
 
-    public function exportPDF(Request $request)
+    // export ke pdf
+    public function exportPDF()
     {
         $book = Book::all();
         $data['books'] = $book;

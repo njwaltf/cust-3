@@ -6,7 +6,8 @@
                 <div class="misc-wrapper">
                     <h2 class="mb-2 mx-2">Page Not Found :(</h2>
                     <p class="mb-4 mx-2">Oops! 😖 The requested URL was not found on this server.</p>
-                    <a href="/dashboard" class="btn btn-primary">Back to home</a>
+                    <a href="/dashboard" class="btn btn-custom">Back to home</a>
+                    
                     <div class="mt-3">
                         <img src="{{ asset('assets/img/illustrations/page-misc-error-light.png') }}"
                             alt="page-misc-error-light" width="500" class="img-fluid"
@@ -17,27 +18,35 @@
             </div>
             <!-- /Error -->
         @else
+
             <div class="container-xxl flex-grow-1 container-p-y">
                 <!--  Row 1 -->
-                <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"><a href="/dashboard/books/">Books</a>
-                        /</span>
-                    Add new</h4>
+                <h4 class="fw-bold py-3 mb-4 title2">
+                    <span class="text-muted fw-light">
+                        <a href="/dashboard/books/" class="title1">Books</a>/
+                    </span>
+                    Add new
+                </h4>
+
                 <!--  Row 1 -->
                 <div class="row">
                     <div class="col-lg-12 my-3">
-                        <h2>Add new Book</h2>
+                        <h2 class="sub-header1">Add new Book</h2>
                     </div>
                 </div>
+
                 <form action="/dashboard/books" method="post" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                     <input type="hidden" name="status" value="{{ 'Dalam Proses' }}">
+                    
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5 class="card-title">Main Information</h5>
+                                    <h5 class="card-title sbtitle">Main Information</h5>
                                 </div>
+
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-lg-12">
@@ -55,6 +64,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="mb-4">
@@ -72,20 +82,24 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="mb-4">
                                                 <label for="title" class="form-label">Book Category</label>
                                                 <p>Select the category of the book.</p>
+                                                
                                                 <select class="form-select @error('type_id') is-invalid @enderror"
                                                     aria-label="Default select example" id="type_id" name="type_id">
                                                     @forelse ($types as $item)
                                                         <option value="{{ $item->id }}">{{ $item->name }}</option>
                                                     @empty
+                                                    
                                                         <option value="">Belum ada kategori</option>
                                                     @endforelse
                                                 </select>
                                                 @error('type_id')
+
                                                     <p class="invalid" style="color: red">
                                                         {{ $message }}
                                                     </p>
@@ -97,13 +111,15 @@
                             </div>
                         </div>
                     </div>
+
                     {{-- tersangka dan korban --}}
                     <div class="row my-5">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5 class="card-title">Book and Publisher Information</h5>
+                                    <h5 class="card-title sbtitle">Book and Publisher Information</h5>
                                 </div>
+
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-lg-4">
@@ -120,6 +136,7 @@
                                                 @enderror
                                             </div>
                                         </div>
+
                                         <div class="col-lg-8">
                                             <div class="mb-4">
                                                 <label for="publisher" class="form-label">Publisher Name</label>
@@ -135,6 +152,7 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="row">
                                         <div class="col-lg-4">
                                             <div class="mb-4">
@@ -150,6 +168,7 @@
                                                 @enderror
                                             </div>
                                         </div>
+
                                         <div class="col-lg-8">
                                             <div class="mb-4">
                                                 <label for="publish_date" class="form-label">Release Date</label>
@@ -170,13 +189,15 @@
                             </div>
                         </div>
                     </div>
+
                     {{-- latar tempat dan waktu --}}
                     <div class="row my-5">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5 class="card-title">Book Cover</h5>
+                                    <h5 class="card-title sbtitle">Book Cover</h5>
                                 </div>
+
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-lg-8">
@@ -201,9 +222,10 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-lg-3">
-                            <button type="submit" class="btn btn-primary" style="margin-right: 15px">Add book <i
+                            <button type="submit" class="btn btn-custom" style="margin-right: 15px">Add book <i
                                     class="ti ti-plus"></i></button>
                             <a href="/dashboard/books" class="btn btn-outline-warning">Batal</a>
                         </div>

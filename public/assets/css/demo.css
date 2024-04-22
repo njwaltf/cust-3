@@ -1,7 +1,152 @@
-/*
-* demo.css
-* File include item demo only specific css only
-******************************************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+
+
+.title{
+  font-family: 'Merriweather';
+  font-size: 22px;
+  font-weight:800;
+  text-align: center;
+  color: #8B7E74;
+}
+
+.title1{
+  font-family: 'Merriweather';
+  font-size: 22px;
+  font-weight:800;
+  text-align: center;
+  color: #1C7947;
+}
+
+.title1:active, .title1:hover{
+  font-family: 'Merriweather';
+  font-size: 22px;
+  font-weight:800;
+  text-align: center;
+  color: #86A789;
+}
+
+.title2{
+  font-family: 'Merriweather';
+  font-size: 22px;
+  font-weight:800;
+  text-align: center;
+  color: #000;
+}
+
+.header{
+  font-family:'Merriweather';
+  font-size: 22px;
+  font-weight:800;
+  color: #1C7947;
+}
+
+.sub-header{
+  font-family: 'Merriweather';
+  font-size: 16px;
+  font-weight:800;
+  color: #000;
+}
+
+.sub-title{
+  font-family: 'Kanit';
+  font-size: 15px;
+  font-weight:600;
+  text-align: center;
+}
+
+.sbtitle{
+  font-family: 'Kanit';
+  font-size: 18px;
+  font-weight:600;
+  color: #000;
+}
+
+
+.form-label{
+  font-family: 'Kanit';
+  font-size: 18px;
+  font-weight:600;
+  color: #000;
+}
+
+.sub-title1{
+  font-family: 'Merriweather';
+  font-size: 20px;
+  font-weight:600;
+  text-align: center;
+  color: #000;
+}
+
+.sub-header1{
+  font-family: 'Merriweather';
+  font-size: 20px;
+  font-weight:600;
+  color: #000;
+}
+
+.menu-header-text{
+  font-family: 'Kanit';
+  font-size: 13px;
+  font-weight:600;
+  text-align: center;
+  color: #1C7947;
+}
+
+.ds{
+  font-family: 'Kanit';
+  font-size: 16px;
+  font-weight:600;
+  text-align: center;
+  color: #000;
+}
+
+.cstxt{
+  font-family: 'Kanit';
+  font-size: 16px;
+  font-weight:600;
+  text-align: center;
+  color: #000;
+}
+
+.cstxts{
+  font-family: 'Kanit';
+  font-size: 16px;
+  font-weight:600;
+  text-align: center;
+  color: #878787;
+}
+
+.txt{
+  font-family: 'Kanit';
+  font-size: 15px;
+  font-weight:500;
+  color: #000;
+}
+
+.form-label{
+  font-family: 'Kanit';
+  font-size: 12px;
+  font-weight:600;
+}
+
+ul li{
+  list-style-type: none;
+}
+
+.btn-custom{
+  font-family: 'Kanit';
+  font-size: 15px;
+  font-weight:600;
+  color: #fff;
+  background-color: #495C83;
+}
+
+.btn:hover, .btn:active{
+  color: #fff;
+  background-color: #000;
+}
 
 .menu .app-brand.demo {
   height: 64px;
@@ -14,10 +159,12 @@
 }
 
 .app-brand-text.demo {
-  font-size: 1.75rem;
-  letter-spacing: -0.5px;
-  text-transform: lowercase;
+  font-family: 'Merriweather';
+  font-size: 17px;
+  font-weight:800;
+  color: #000;
 }
+
 
 /* ! For .layout-navbar-fixed added fix padding top tpo .layout-page */
 /* Detached navbar */

@@ -7,7 +7,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TypeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -27,11 +29,24 @@ use Illuminate\Support\Facades\Route;
 // });
 // Route::get('/register', function () {
 //     return view('register');
+
+Route::get('/', function () {
+    return view('home', [
+        'style' => 'home'
+    ]);
+})->name('home');
+
+Route::get('/home', function () {
+    return view('home', [
+        'style' => 'home'
+    ]);
+});
 // });
-Route::get('/', [LoginController::class, 'index'])->name('login');
-Route::post('/', [LoginController::class, 'auth']);
-Route::get('/register', [RegisterController::class, 'index'])->name('register');
-Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'auth']);
+// Route::get('/register', [RegisterController::class, 'index'])->name('register');
+// Route::post('/register', [RegisterController::class, 'store']);
 Route::post('/logout', [RegisterController::class, 'logout']);
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
@@ -39,6 +54,7 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
     Route::resource('/books', BookController::class);
     Route::resource('/bookings', BookingController::class);
     Route::resource('/types', TypeController::class);
+    Route::resource('/users', UserController::class);
     Route::get('/bookings/{id}', [BookingController::class, 'show']);
     Route::post('/bookings', [BookingController::class, 'store']);
     // profile
@@ -48,3 +64,4 @@ Route::prefix('/dashboard')->middleware('auth')->group(function () {
 });
 Route::get('/qr/export/books', [BookController::class, 'exportPDF']);
 Route::get('/qr/export/bookings', [BookingController::class, 'exportPDF']);
+Route::get('/qr/export/users', [UserController::class, 'exportPDF']);

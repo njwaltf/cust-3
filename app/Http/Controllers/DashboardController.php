@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public $title = 'LP | Dashboard';
+    public $title = 'Perpus | Dashboard';
+    // menampilkan dashboard dan query data yg ditampilkan
     public function index()
     {
         return view('dashboard.dashboard', [
